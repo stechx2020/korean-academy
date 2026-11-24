@@ -33,8 +33,8 @@ jobs:
 
       - name: Build Project
         env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL || 'https://qvkjbqjtbjewnrcpowbo.supabase.co' }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY || 'sb_publishable_Eht1lXkZIKTUAu0Cak2t3w_KqbCDT7e' }}
         run: npm run build
 
       - name: Upload GitHub Pages Artifact
